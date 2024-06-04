@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en" class="h-full">
+  <head>
+    <meta charset="UTF-8" />
+
+    <!-- Favicon  -->
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAALQAAAC0CAMAAAAKE/YAAAAABGdBTUEAALGPC/xhBQAAAAFzUkdCAK7OHOkAAABgUExURfHx+zNIZfTz/dnX/aCgzjVKZ/7+/tfW+////0ZiiPb2/ebm/OTk/NDQ9V9wkUtde3qGp8XG6+bn81Fqjri54aWxyZejv+zt+K6u1YWVstHW5sDH2mp+n7O90trd7j1RbjEA6MsAAAOhSURBVHja7dxrc6sgEAZggk0tbTRGBSpe8v//5UkaTWwErJe4MGd3Jt+fMSDwugP58LAIohGNaEQjGtGIRjSiEY1oRCMa0YhGNKI9Rb9/kgl1CH9V0EgI9DslC9Bh/p1uj55oHqLf1lJPQH+Spei11NuiV1KTF81CA3od9dboVdSbo9dQb49eQQ2AXq6GQC9Wg6CXqmHQC9VA6GVqKPQiNRh6iRoOvUANiJ6vhkTPVoOi56ph0TPVwOh5amj0LDU4eo4aHj1D7QB6utoF9GT1dujg9LaWesMnHX2vpd4QHVoe9TT1lmjLqJ6m3hQdnnLzEMk/HUUHYWQu6Si6z//9u9SX82hNHd4RjWhEI9ojNKWEeodWXPDGM3QdM8Yq5RW6zti1CukRujWzWFFv0J2ZZf6g72ZWpY4PjzSV9Mmc1f2JGBgLCp3yqirKJzPvvfKC6GSqaMjeBC2Ln3lXG8zkEIn4aKqsiAIANC2zdjzozeQgzjtz7ZMIAs07qd5M1XG3N9funAeAaKY1X/6J895aAgKtMpv5it5Z0W8BxNuDZxYzIU1sHR7HEwha9tUDMznk2d48EY88AFpceGY2k0NwEompihxuGe/UGvN1cbEV4N7jptaZHd4wSR7fVkW/zohNWTb+HWwpxQgB0YhG9EI0pf7FYk3Ny9QzdFldVvSk8Qpdxv7FYq2ZxY0/sVhn9ikWu5v7sZjlA20Itp+mUrbR/8PM+GMifiexqSoOhJZ1kQj1ZBbyjuZHS1hzLmBiMfEz70pKtWbSZPbTOEhY08Zicak3uxnWdAlTrDU7jmZas6PD4zkWezKPTUQBOBGN5ssrL3fxlSdsZlcXl756YHZ2GX+oh2Z39x6dWmN2ORYT2TXKk56dERXnyruDLaWGXAwjBERjWAOClqpU0i80VUnGMpH6hKaqui2OHqE7M4sbb9B3s0dhzcPcf9Larp+2Ux0urOnaNHvm3ph28jOzVELU6ZO5SP/2QR/ojHj7xJwoqjePtk5AnsYr9ctM/9qksisgc49Kax4Na2DRTGsea7zanzlglmcwj7W47aoIJKwprOaxZsITTDtQWtjMI22bIUzbJqF99cDsaINsXz00O7v3uKs1Znc3TK1aZ3Z5l5fWRVFL78IaQjCsQTSiEY1oRP9H6I9Xo19xrcDL0eQV6KV39a42Ora8FXnE/PfrPTa8f9pawdcEM15PjmhEIxrRiEY0ohGNaEQjGtGIRjSiEe1S/QNcKFWnwWkF6wAAAFd6VFh0UmF3IHByb2ZpbGUgdHlwZSBpcHRjAAB4nOPyDAhxVigoyk/LzEnlUgADIwsuYwsTIxNLkxQDEyBEgDTDZAMjs1Qgy9jUyMTMxBzEB8uASKBKLgDqFxF08kI1lQAAAABJRU5ErkJggg=="
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAMAAABEpIrGAAAABGdBTUEAALGPC/xhBQAAAAFzUkdCAK7OHOkAAAC0UExURUxpcaCgzuno+/Hx+9fW+6am0qKiz/Hx+/Hx+9jY+6en1NnY+9fW+9fX+9LR96+v2qur19fW/PHx++/v+/Pz/drY/dva/NrY/tLR98/O9DNIZe3u+aCgzl5ujOjq9bu+4oKNrpyjxaSqzHeGpUNgh7fB1I2duKWl09bV+lRukW2Doqio1D9TcExnjNba6eHk8L3F2HeLqZ+txGd8m9HW5l9zlT1Rb7i73ZWlvaio1aq1y6ezySDWdSkAAAARdFJOUwD4nQbbCIEY2Rn4B9jb1XqN4wCgJAAAAAlwSFlzAAAOxAAADsQBlSsOGwAAAR1JREFUOMuFk+lWwjAQRiuIIq5NWqHGpisxViHIrr7/e5lOoIdMWrl/557JTL7E8zyv3yMN9Nn3o6eBZ3E9RMLoavC/8HZhG67wahstgm20CZbRKpwaWJDJ94dm9Ngl+HICPNxgIQiMcOAeC3SxoKfCpSVQSn5mFT8KIRbYXixn71PCsgLIJBL4V1nqOlHxCxBH+Ih5VdcJTXIgcWYI1NqsOQ41Y2eGWmnuoXULDd8vme4AuB2U4qIsON1lwM53tqjScrUOOrdgoqzrhOUpkON7IFwUuq6HDA3ukIzjsJwt6LQOq2mABEbpbx1WlACRE5YwYfHV9lOz3UQdYfE0BtKJG9YGwgrNc5PukGp+LovzYWHh7ijg739A9m518Q9qYEFqliTJSAAAAFd6VFh0UmF3IHByb2ZpbGUgdHlwZSBpcHRjAAB4nOPyDAhxVigoyk/LzEnlUgADIwsuYwsTIxNLkxQDEyBEgDTDZAMjs1Qgy9jUyMTMxBzEB8uASKBKLgDqFxF08kI1lQAAAABJRU5ErkJggg=="
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAMAAAAoLQ9TAAAABGdBTUEAALGPC/xhBQAAAAFzUkdCAK7OHOkAAACWUExURUxpcenp+/Hx+6CgztfW+6am06em0/Hx+/Ly+9jX+9TT+djX/Kyr15+fza6t2fHx+9jX/NHQ9uzt+PPz/e7u+9va/NXU+OTm893c/unq9pKbvH6KqdnY/YqbtoaUsrK22NvZ/6Koy8HJ22V0k5imv298ndPY57G80KSrynaLqdnd67Cv27u+4p2rwr7B4WqAoKi0yo2Wto8AUZIAAAAPdFJOUwAV0IDdB/wb3RvW3Y/4fRKjDuwAAAAJcEhZcwAADsQAAA7EAZUrDhsAAACZSURBVBjTXY/rEoIgEEaxksouwJYSIKCY2r3e/+miEKfp+7dnvjO7i1AyIT77nK1T9M18MQA8Tf/AJpARXDHepj+AFoxlywCgu3M/FnQWgNDPF1dNo9hqaLiewMPaWzE0yA6cyKlPVHqtuWlbExU4Gg62ru2oENHBoaqqqIDzFamUZBHo8wVOUtYREMH9pWVZBiW+/1mbJegNlnIPeeHZ+N0AAABXelRYdFJhdyBwcm9maWxlIHR5cGUgaXB0YwAAeJzj8gwIcVYoKMpPy8xJ5VIAAyMLLmMLEyMTS5MUAxMgRIA0w2QDI7NUIMvY1MjEzMQcxAfLgEigSi4A6hcRdPJCNZUAAAAASUVORK5CYII="
+    />
+    <link
+      rel="manifest"
+      href="data:application/manifest+json;base64,ewogICAgIm5hbWUiOiAiVG8gZG8gbGlzdCBhcHAiLAogICAgInNob3J0X25hbWUiOiAiVG8gZG8gbGlzdCBhcHAiLAogICAgImljb25zIjogWwogICAgICAgIHsKICAgICAgICAgICAgInNyYyI6ICIvYW5kcm9pZC1jaHJvbWUtMTkyeDE5Mi5wbmciLAogICAgICAgICAgICAic2l6ZXMiOiAiMTkyeDE5MiIsCiAgICAgICAgICAgICJ0eXBlIjogImltYWdlL3BuZyIKICAgICAgICB9LAogICAgICAgIHsKICAgICAgICAgICAgInNyYyI6ICIvYW5kcm9pZC1jaHJvbWUtNTEyeDUxMi5wbmciLAogICAgICAgICAgICAic2l6ZXMiOiAiNTEyeDUxMiIsCiAgICAgICAgICAgICJ0eXBlIjogImltYWdlL3BuZyIKICAgICAgICB9CiAgICBdLAogICAgInRoZW1lX2NvbG9yIjogIiNmZmZmZmYiLAogICAgImJhY2tncm91bmRfY29sb3IiOiAiI2ZmZmZmZiIsCiAgICAiZGlzcGxheSI6ICJzdGFuZGFsb25lIgp9Cg=="
+    />
+    <link
+      rel="mask-icon"
+      href="/img/safari-pinned-tab-b1c39881.svg"
+      color="#5bbad5"
+    />
+    <meta name="msapplication-TileColor" content="#7e6963" />
+    <meta name="theme-color" content="#ffffff" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Title  -->
+    <title>To do list app</title>
+    <script type="module" crossorigin src="./js/main-1fa80aa3.js"></script>
+    <link rel="stylesheet" href="./css/index-c44d8c13.css" />
+  </head>
+  <body
+    class="h-full bg-light-theme-body text-[18px] -tracking-[0.25px] transition-colors dark:bg-dark-theme-body"
+  >
+    <div
+      class="relative h-[300px] bg-light-bg bg-cover bg-center bg-no-repeat transition-[background-image] duration-300 dark:bg-dark-bg"
+    >
+      <header class="pb-10 pt-[70px]">
+        <div
+          class="mx-auto flex w-full max-w-[561px] items-center justify-between px-5"
+        >
+          <a
+            class="transition-opacity hover:opacity-80 active:opacity-60"
+            href="index.html"
+          >
+            <img
+              src="./img/logo-000f2725.svg"
+              alt="To do app logo"
+              width="167"
+              height="40"
+            />
+          </a>
+          <button
+            class="transition-transform hover:opacity-80 active:scale-90"
+            id="themeChangerButton"
+          >
+            <img
+              src="./img/moon-fef8c377.svg"
+              alt="Dark, light theme toggler"
+              data-moon="/img/moon-fef8c377.svg"
+              data-shine="/img/shine-45e7e64f.svg"
+            />
+          </button>
+        </div>
+      </header>
+
+      <!-- Create new to do input -->
+      <div class="mx-auto w-full max-w-[561px] px-5">
+        <form method="post" id="newTaskCreaterForm">
+          <input
+            class="dark:placeholder:text-dark-nav-item-color w-full rounded-[5px] bg-white bg-none bg-[left_24px_center] bg-no-repeat py-5 pl-[72px] pr-6 text-light-task-input-text-color caret-[#3a7cfd] shadow-light-task-input-shadow transition-colors placeholder:text-light-nav-item-color placeholder-shown:bg-light-input-circle focus:outline-none dark:bg-dark-card-color dark:bg-none dark:text-dark-task-input-text-color dark:shadow-dark-cards-shadow dark:placeholder-shown:bg-dark-input-circle dark:focus:outline-none"
+            id="newTaskCreaterInput"
+            type="text"
+            placeholder="Create a new todo…"
+            autocomplete="off"
+            maxlength="100"
+            minlength="4"
+            autofocus
+            required
+          />
+        </form>
+      </div>
+    </div>
+
+    <!-- Tasks  -->
+    <section class="mx-auto w-full max-w-[561px] px-5">
+      <div
+        class="-translate-y-[54px] overflow-hidden rounded-[5px] shadow-light-cards-shadow dark:shadow-dark-cards-shadow"
+      >
+        <h2 class="visually-hidden">Tasks</h2>
+        <div class="flex h-full max-h-[431px] flex-col">
+          <ul class="h-full overflow-y-auto" id="tasks"></ul>
+          <div
+            class="hidden items-center justify-between bg-white px-6 py-4 text-[14px] -tracking-[0.19px] dark:bg-dark-card-color"
+            id="actions"
+          >
+            <span class="dark:dark-nav-item-color text-light-nav-item-color"
+              ><span class="itemLeftCount">0</span> items left</span
+            >
+
+            <div class="flex items-center">
+              <input
+                class="visually-hidden peer/all"
+                id="tasksAll"
+                value="all"
+                type="radio"
+                name="status"
+                checked
+              />
+              <label
+                class="mr-5 cursor-pointer font-bold text-light-nav-item-color transition-colors hover:text-light-text-color focus:outline-none peer-checked/all:text-blue dark:hover:text-light-border-color dark:focus:outline-none"
+                for="tasksAll"
+                >All</label
+              >
+              <input
+                class="visually-hidden peer/active"
+                id="tasksActive"
+                value="active"
+                type="radio"
+                name="status"
+              />
+              <label
+                class="mr-5 cursor-pointer font-bold text-light-nav-item-color transition-colors hover:text-light-text-color focus:outline-none peer-checked/active:text-blue dark:hover:text-light-border-color dark:focus:outline-none"
+                for="tasksActive"
+              >
+                Active
+              </label>
+              <input
+                class="visually-hidden peer/completed"
+                id="tasksCompleted"
+                value="completed"
+                type="radio"
+                name="status"
+              />
+              <label
+                class="cursor-pointer font-bold text-light-nav-item-color transition-colors hover:text-light-text-color focus:outline-none peer-checked/completed:text-blue dark:hover:text-light-border-color dark:focus:outline-none"
+                for="tasksCompleted"
+              >
+                Completed
+              </label>
+            </div>
+            <button
+              class="capitalize text-light-nav-item-color transition-transform hover:text-light-text-color active:scale-90 dark:hover:text-light-border-color"
+              id="clearCompletedButton"
+            >
+              Clear completed
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Task data modal  -->
+    <dialog id="taskDescriptionModal" class="modal bg-modal-bg">
+      <div class="modal-box bg-light-card-color dark:bg-dark-card-color">
+        <form method="dialog">
+          <button
+            class="btn btn-circle btn-ghost absolute right-2 top-2 min-h-[18px] min-w-[18px] bg-light-x bg-center bg-no-repeat text-light-text-color transition-transform active:scale-90 dark:bg-dark-x dark:text-dark-text-color"
+          ></button>
+        </form>
+        <div
+          class="flex flex-col text-light-text-color dark:text-dark-text-color"
+        >
+          <h3 class="mb-6 text-[24px] font-bold">Task details</h3>
+          <dl>
+            <div class="mb-2 flex items-center">
+              <dt class="mr-3 whitespace-nowrap font-bold">Title:</dt>
+              <dd class="truncate" id="taskTitle"></dd>
+            </div>
+            <div class="mb-2 flex items-center">
+              <dt class="mr-3 whitespace-nowrap font-bold">Description:</dt>
+              <dd class="truncate" id="taskDescription"></dd>
+            </div>
+            <div class="mb-2 flex items-center">
+              <dt class="mr-3 whitespace-nowrap font-bold">Created date:</dt>
+              <dd class="truncate" id="taskCreatedDate"></dd>
+            </div>
+            <div class="mb-2 flex items-center">
+              <dt class="mr-3 whitespace-nowrap font-bold">Status:</dt>
+              <dd class="truncate" id="taskStatus"></dd>
+            </div>
+            <div class="flex items-center">
+              <dt class="mr-3 whitespace-nowrap font-bold">Task ID:</dt>
+              <dd class="truncate" id="taskId"></dd>
+            </div>
+          </dl>
+        </div>
+      </div>
+    </dialog>
+
+    <!-- Audios  -->
+    <audio id="audioRemoveTask" src="audios/remove-task.mp3"></audio>
+    <audio id="audioThemeChange" src="audios/theme-change.mp3"></audio>
+    <audio id="audioSelectStatus" src="audios/select-status.mp3"></audio>
+    <audio id="audioCheck" src="audios/check.mp3"></audio>
+    <audio id="audioAddNewTask" src="audios/add-new-task.mp3"></audio>
+
+    <!-- Card template -->
+    <template id="taskCardTemplate">
+      <li id="taskCard">
+        <div
+          class="flex items-center border-b border-light-border-color bg-white px-6 py-5 transition-colors dark:border-dark-border-color dark:bg-dark-card-color"
+        >
+          <input
+            id=""
+            class="visually-hidden js-task-checker peer"
+            type="checkbox"
+          />
+          <label
+            for=""
+            id="taskCheckerLabel"
+            class="mr-6 min-h-[24px] min-w-[24px] cursor-pointer bg-light-unchecked bg-center bg-no-repeat transition-all hover:bg-unchecked-hover peer-checked:bg-checked dark:bg-dark-unchecked dark:hover:bg-unchecked-hover dark:peer-checked:bg-checked"
+          >
+          </label>
+
+          <h3
+            class="cursor-pointer overflow-hidden truncate whitespace-nowrap pr-3 text-light-text-color hover:underline peer-checked:text-light-completed peer-checked:line-through dark:text-dark-text-color dark:peer-checked:text-dark-completed"
+            id="taskTitle"
+          ></h3>
+          <button
+            class="ml-auto min-h-[18px] min-w-[18px] bg-light-x bg-center bg-no-repeat transition-transform hover:opacity-80 active:scale-90 dark:bg-dark-x"
+            id="taskRemoveButton"
+          ></button>
+        </div>
+      </li>
+    </template>
+  </body>
+</html>
